@@ -15,11 +15,15 @@ class App extends Component {
     }
   }
 
+  handleClick(index) {
+    console.log(index)
+  }
+
   render() {
     return (
       <div className='board'>
-        {this.state.board.map((cell) => {
-          return <div className='square'>{cell}</div>
+        {this.state.board.map((cell, index) => {
+          return <div className='square' onClick={this.handleClick.bind(this, index)} key={index}>{cell}</div>
         })}
       </div>
     );
