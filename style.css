@@ -1,0 +1,19 @@
+.board {
+  height: 600px;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.square {
+  height: 200px;
+  width: 200px;
+  box-sizing: border-box;
+  border: 5px solid black;
+}
+
+.square:hover {
+  background-color: #80cd92;
+}
