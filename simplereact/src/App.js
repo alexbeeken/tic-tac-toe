@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   handleClick(index) {
-    if (this.state.board[index] === "") {
+    if (this.state.board[index] === "" && !this.state.winner) {
       var board = this.state.board
       board[index] = this.state.currentTurn
       this.setState({
