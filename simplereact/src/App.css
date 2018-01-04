@@ -1,6 +1,6 @@
 .board {
-  height: 600px;
-  width: 600px;
+  width: 300px;
+  height: 300px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -8,13 +8,11 @@
 }
 
 .game {
-  display: flex;
-  justify-content: space-between;
 }
 
 .square {
-  height: 200px;
-  width: 200px;
+  height: 100px;
+  width: 100px;
   box-sizing: border-box;
   border: 5px solid black;
   font-size: 5em;
@@ -28,19 +26,34 @@
 }
 
 .winner {
-  width: 200px;
-  float: right;
+  width: 100%;
 }
 
 .reset-button {
-  float: right;
+  margin: auto;
   width: 200px;
 }
 
 .reset-button button {
-  background-color: green;
+  background-color: #a1ef7c;
+  border: 1px solid gray;
   border-radius: 10px;
   height: 50px;
-  width: 100px;
+  width: 100%;
   font-size: 20px;
+}
+
+.upper {
+  margin: 20px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.lower {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }

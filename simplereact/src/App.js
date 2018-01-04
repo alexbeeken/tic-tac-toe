@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Winner from './components/winner'
+import ResetButton from './components/reset-button'
+import Board from './components/board'
 import './App.css';
 
 const WINNING_COMBOS = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
@@ -68,16 +70,12 @@ class App extends Component {
   render() {
     return (
       <div className='game'>
-        <div className='board'>
-          { this.state.board.map((cell, index) => {
-            return <div className='square' onClick={this.handleClick.bind(this, index)} key={index}>{cell}</div>
-          })}
+        <div className='upper'>
+          <Board board={this.state.board} handleClick={this.handleClick.bind(this)}/>
         </div>
-        {this.state.winner && <Winner winner={this.state.winner} />}
-        <div class='reset-button'>
-          <button onClick={this.resetGame}>
-            reset game
-          </button>
+        <div className='lower'>
+          {this.state.winner && <Winner winner={this.state.winner} />}
+          {this.state.winner && <ResetButton resetGame={this.resetGame} />}
         </div>
       </div>
     );
