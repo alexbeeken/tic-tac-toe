@@ -26,13 +26,20 @@ class App extends Component {
   checkForWinner() {
     if (this.state.turns >= 2) {
       var board = this.state.board
-      return WINNING_COMBOS.find((combo) => {
+      var result = WINNING_COMBOS.find((combo) => {
         if (board[combo[0]] === board[combo[1]] && board[combo[1]] === board[combo[2]] && board[combo[0]] !== "" && board[combo[1]] !== "" && board[combo[2]] !== "") {
           return board[combo[0]]
         } else {
           return false
         }
       })
+      if (!result && this.state.turns >= 8) {
+        return 'Nobody'
+      } else if (result) {
+        return this.state.currentTurn
+      } else {
+        return false
+      }
     } else {
       return false
     }
@@ -50,7 +57,7 @@ class App extends Component {
       var winner = this.checkForWinner()
       if (winner) {
         this.setState({
-          winner: this.state.currentTurn
+          winner: winner
         })
       }
     }
